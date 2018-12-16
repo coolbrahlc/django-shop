@@ -6,8 +6,6 @@ from products.models import ProductImage
 
 def landing(request):
 
-    vari = ' texting '
-
     form = SubscriberForm(request.POST or None)
 
     if request.method == 'POST' and form.is_valid():        # !!!!!!!!!!!!!!!!!!! Консольный вывод

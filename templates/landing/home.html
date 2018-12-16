@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block content %}
+
+        <div class="section-top">
+            <img src="{% static  'img/slider1.jpg' %}" class="responsive">
+        </div>
+
+        <div class="section section1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="text-center">New arrivals</h1>
+                    </div>
+                    {% for product_from_prodimg in products %}
+                        <div class="col-lg-3">
+                            <div class="product-item">
+                                <img src="{{ product_from_prodimg.image.url }}" class="responsive">
+                                <h4>{{product_from_prodimg.product.name }}</h4>
+
+                                    <p>{{product_from_prodimg.product.description|truncatechars_html:100}}</p>
+                                    <div class="price_1"> {{ product_from_prodimg.product.price }} USD </div>
+
+                                <div class="add-to-cart-btn">
+                                    <button class="btn btn-success">
+                                        Add to cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+
+        <div class="section section2 best-selling-container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="text-center">Jackets</h1>
+                    </div>
+                    {% for product_from_prodimg in products_jackets %}
+                        <div class="col-lg-3">
+                            <div class="product-item">
+{#                              <img src="{% static  'img/slider1.jpg' %}" class="responsive">#}
+                                <img src="{{ product_from_prodimg.image.url }}" class="responsive">
+                                <h4>{{product_from_prodimg.product.name }}</h4>
+
+                                    <p>{{product_from_prodimg.product.description|truncatechars_html:100}}</p>
+                                    <div class="price_1"> {{ product_from_prodimg.product.price }} USD </div>
+
+                                <div class="add-to-cart-btn">
+                                    <button class="btn btn-success">
+                                        Add to cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+
+        <div class="section section3 outlet-container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="text-center">Down jackets</h1>
+                    </div>
+                    {% for product_from_prodimg in products_winter %}
+                        <div class="col-lg-3">
+                            <div class="product-item">
+                                <img src="{{ product_from_prodimg.image.url }}" class="responsive">
+                                <h4>{{product_from_prodimg.product.name }}</h4>
+
+                                    <p>{{product_from_prodimg.product.description|truncatechars_html:100}}</p>
+                                    <div class="price_1"> {{ product_from_prodimg.product.price }} USD </div>
+
+                                <div class="add-to-cart-btn">
+                                    <button class="btn btn-success">
+                                        Add to cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+
+    {% endblock content %}
+
